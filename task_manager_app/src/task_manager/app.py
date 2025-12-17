@@ -4,6 +4,7 @@ from datetime import datetime
 from core.service import TaskService
 from ui.views import SidebarView, TaskListView, TaskDetailsView
 from ui.dialogs import NewTaskDialog, MessageDialog, ConfirmDialog
+from storage.json_storage import JsonStorage
 
 
 class App(ctk.CTk):
@@ -17,8 +18,11 @@ class App(ctk.CTk):
         self.geometry("1100x650")
         self.minsize(950, 550)
 
-        self.service = TaskService()
-        self.service.seed_demo()
+        self.storage = JsonStorage("data/tasks.json")
+        self.service = TaskService(self.storage)
+        self.service.load()
+        self.service.seed_demo_if_empty()
+
         self.selected_id: str | None = None
 
         self.current_filter: str | None = None  # None / "active" / "done"
