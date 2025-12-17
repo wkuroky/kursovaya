@@ -31,7 +31,7 @@ class TaskListView(ctk.CTkFrame):
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
-        self.on_select = None  # сюда App назначит обработчик
+        self.on_select = None  # callback(task_id)
 
         header = ctk.CTkFrame(self)
         header.grid(row=0, column=0, sticky="ew", padx=10, pady=(10, 5))
@@ -47,7 +47,6 @@ class TaskListView(ctk.CTkFrame):
         self.body.grid(row=1, column=0, sticky="nsew", padx=10, pady=(5, 10))
 
     def render(self, tasks):
-        # очистить старые карточки
         for w in self.body.winfo_children():
             w.destroy()
 
@@ -62,10 +61,10 @@ class TaskListView(ctk.CTkFrame):
             meta = ctk.CTkLabel(card, text=f"{status}   Срок: {t.due_date or '-'}")
             meta.pack(anchor="w", padx=10, pady=(2, 0))
 
-            desc = ctk.CTkLabel(card, text=(t.description[:60] + "…") if len(t.description) > 60 else t.description)
+            short_desc = (t.description[:60] + "…") if len(t.description) > 60 else t.description
+            desc = ctk.CTkLabel(card, text=short_desc)
             desc.pack(anchor="w", padx=10, pady=(2, 10))
 
-            # клик по карточке/лейблам
             def _select(_event=None, task_id=t.id):
                 if self.on_select:
                     self.on_select(task_id)
@@ -91,7 +90,13 @@ class TaskDetailsView(ctk.CTkFrame):
         self.desc_box.grid(row=2, column=0, padx=15, pady=8, sticky="ew")
         self.desc_box.insert("1.0", "Описание задачи...")
 
-        self.due_entry = ctk.CTkEntry(self, placeholder_text="Срок (например 2025-12-31)")
+        vcmd = (self.register(self._validate_date_input), "%P")
+        self.due_entry = ctk.CTkEntry(
+            self,
+            placeholder_text="Срок (например 2025-12-31)",
+            validate="key",
+            validatecommand=vcmd
+        )
         self.due_entry.grid(row=3, column=0, padx=15, pady=8, sticky="ew")
 
         self.status_menu = ctk.CTkOptionMenu(self, values=["active", "done"])
@@ -109,3 +114,16 @@ class TaskDetailsView(ctk.CTkFrame):
 
         self.btn_done = ctk.CTkButton(self, text="Отметить выполненной")
         self.btn_done.grid(row=6, column=0, padx=15, pady=(5, 15), sticky="ew")
+
+    def _validate_date_input(self, value: str) -> bool:
+        if value == "":
+            return True
+        if len(value) > 10:
+            return False
+        for ch in value:
+            if not (ch.isdigit() or ch == "-"):
+                return False
+        for i, ch in enumerate(value):
+            if ch == "-" and i not in (4, 7):
+                return False
+        return True

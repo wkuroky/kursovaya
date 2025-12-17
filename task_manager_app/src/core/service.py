@@ -1,3 +1,4 @@
+from datetime import datetime
 from core.models import Task
 
 
@@ -12,7 +13,21 @@ class TaskService:
         self.add_task("Сделать курсовую", "UI + JSON + логи", "2025-02-01")
         self.add_task("Погулять", "30 минут вечером", "")
 
+    def _is_valid_date(self, s: str) -> bool:
+        s = (s or "").strip()
+        if s == "":
+            return True
+        try:
+            datetime.strptime(s, "%Y-%m-%d")
+            return True
+        except ValueError:
+            return False
+
     def add_task(self, title: str, description: str = "", due_date: str = "") -> Task:
+        due_date = (due_date or "").strip()
+        if not self._is_valid_date(due_date):
+            due_date = ""  # можно заменить на выброс ошибки, но пока так проще
+
         task = Task(title=title.strip() or "Без названия", description=description, due_date=due_date)
         self._tasks.append(task)
         return task
@@ -37,6 +52,11 @@ class TaskService:
         t = self.get_task(task_id)
         if not t:
             return False
+
+        due_date = (due_date or "").strip()
+        if not self._is_valid_date(due_date):
+            due_date = ""
+
         t.title = title.strip() or "Без названия"
         t.description = description
         t.due_date = due_date
