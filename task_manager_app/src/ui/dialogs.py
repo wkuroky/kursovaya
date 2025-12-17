@@ -19,6 +19,39 @@ class MessageDialog(ctk.CTkToplevel):
         self.update_idletasks()
 
 
+class ConfirmDialog(ctk.CTkToplevel):
+    def __init__(self, master, title: str, message: str):
+        super().__init__(master)
+        self.title(title)
+        self.geometry("420x180")
+        self.resizable(False, False)
+
+        self.result = False  # True если нажали "Да"
+
+        self.grab_set()
+        self.lift()
+        self.focus_force()
+
+        ctk.CTkLabel(self, text=message, justify="left", wraplength=380).pack(padx=20, pady=(25, 15))
+
+        btns = ctk.CTkFrame(self, fg_color="transparent")
+        btns.pack(fill="x", padx=20, pady=(0, 20))
+        btns.grid_columnconfigure((0, 1), weight=1)
+
+        ctk.CTkButton(btns, text="Да", command=self._yes).grid(row=0, column=0, padx=(0, 8), sticky="ew")
+        ctk.CTkButton(btns, text="Нет", command=self._no).grid(row=0, column=1, padx=(8, 0), sticky="ew")
+
+        self.update_idletasks()
+
+    def _yes(self):
+        self.result = True
+        self.destroy()
+
+    def _no(self):
+        self.result = False
+        self.destroy()
+
+
 class NewTaskDialog(ctk.CTkToplevel):
     def __init__(self, master):
         super().__init__(master)

@@ -3,7 +3,7 @@ from datetime import datetime
 
 from core.service import TaskService
 from ui.views import SidebarView, TaskListView, TaskDetailsView
-from ui.dialogs import NewTaskDialog, MessageDialog
+from ui.dialogs import NewTaskDialog, MessageDialog, ConfirmDialog
 
 
 class App(ctk.CTk):
@@ -134,6 +134,16 @@ class App(ctk.CTk):
         if not self.selected_id:
             MessageDialog(self, "Ошибка", "Сначала выберите задачу в списке.")
             return
+
+        task = self.service.get_task(self.selected_id)
+        title = task.title if task else "эту задачу"
+
+        dlg = ConfirmDialog(self, "Подтверждение", f"Удалить задачу:\n\n{title}\n\n?")
+        self.wait_window(dlg)
+
+        if not dlg.result:
+            return
+
         ok = self.service.delete_task(self.selected_id)
         if ok:
             self.selected_id = None
