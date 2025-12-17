@@ -31,6 +31,8 @@ class TaskListView(ctk.CTkFrame):
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
+        self.on_select = None  # сюда App назначит обработчик
+
         header = ctk.CTkFrame(self)
         header.grid(row=0, column=0, sticky="ew", padx=10, pady=(10, 5))
         header.grid_columnconfigure(0, weight=1)
@@ -41,19 +43,37 @@ class TaskListView(ctk.CTkFrame):
         self.sort = ctk.CTkOptionMenu(header, values=["Сортировка: по дате", "Сортировка: по статусу"])
         self.sort.grid(row=0, column=1, sticky="e", pady=10)
 
-        # Список (пока заглушки-карточки)
-        body = ctk.CTkScrollableFrame(self)
-        body.grid(row=1, column=0, sticky="nsew", padx=10, pady=(5, 10))
+        self.body = ctk.CTkScrollableFrame(self)
+        self.body.grid(row=1, column=0, sticky="nsew", padx=10, pady=(5, 10))
 
-        for i in range(1, 8):
-            card = ctk.CTkFrame(body)
+    def render(self, tasks):
+        # очистить старые карточки
+        for w in self.body.winfo_children():
+            w.destroy()
+
+        for t in tasks:
+            card = ctk.CTkFrame(self.body)
             card.pack(fill="x", padx=5, pady=6)
 
-            title = ctk.CTkLabel(card, text=f"Задача #{i}: пример", font=("Arial", 15, "bold"))
+            title = ctk.CTkLabel(card, text=t.title, font=("Arial", 15, "bold"))
             title.pack(anchor="w", padx=10, pady=(10, 0))
 
-            desc = ctk.CTkLabel(card, text="Короткое описание задачи (пока заглушка)...")
+            status = "✅ done" if t.status == "done" else "🟦 active"
+            meta = ctk.CTkLabel(card, text=f"{status}   Срок: {t.due_date or '-'}")
+            meta.pack(anchor="w", padx=10, pady=(2, 0))
+
+            desc = ctk.CTkLabel(card, text=(t.description[:60] + "…") if len(t.description) > 60 else t.description)
             desc.pack(anchor="w", padx=10, pady=(2, 10))
+
+            # клик по карточке/лейблам
+            def _select(_event=None, task_id=t.id):
+                if self.on_select:
+                    self.on_select(task_id)
+
+            card.bind("<Button-1>", _select)
+            title.bind("<Button-1>", _select)
+            meta.bind("<Button-1>", _select)
+            desc.bind("<Button-1>", _select)
 
 
 class TaskDetailsView(ctk.CTkFrame):

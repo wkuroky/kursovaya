@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ff39cc9-f747-43e9-a213-d799bca24b22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Kursovaya3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Kursovaya3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager_app/src/task_manager/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/task_manager/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager_app/src/task_manager/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/task_manager/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager_app/src/ui/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/ui/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/core/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/core/service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +28,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Kursovaya3" />
