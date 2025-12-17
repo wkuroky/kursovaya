@@ -26,7 +26,8 @@ def test_update_task_changes_fields():
     svc = make_service()
     t = svc.add_task("Old", "desc", "2025-01-01")
 
-    ok = svc.update_task(t.id, "New", "new desc", "2025-02-02", "active")
+    ok = svc.update_task(t.id, "New", "new desc", "2025-02-02", "active", "medium", autosave=True)
+
     assert ok is True
 
     updated = svc.get_task(t.id)

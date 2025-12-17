@@ -8,3 +8,7 @@
 2025-12-17 22:40:15,620 | INFO | JSON save: saved 2 tasks to data\tasks.json
 2025-12-17 22:40:19,167 | INFO | Task updated: id=5d56d1b1-36d8-4b62-85d4-e4404329547a title='апр' status=done due=''
 2025-12-17 22:40:19,169 | INFO | JSON save: saved 2 tasks to data\tasks.json
+2025-12-17 23:33:57,585 | INFO | App started
+2025-12-17 23:33:57,586 | INFO | TaskService initialized
+2025-12-17 23:33:57,587 | INFO | JSON load: loaded 2 tasks from data\tasks.json
+2025-12-17 23:33:57,587 | INFO | Service load: 2 tasks in memory
