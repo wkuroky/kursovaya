@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ff39cc9-f747-43e9-a213-d799bca24b22" name="Changes" comment="" />
+    <list default="true" id="6ff39cc9-f747-43e9-a213-d799bca24b22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/data/tasks.json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/core/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/core/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/storage/json_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/storage/json_storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/task_manager/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/task_manager/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/task_manager/data/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/task_manager/data/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_manager_app/src/utils/logging_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager_app/src/utils/logging_conf.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

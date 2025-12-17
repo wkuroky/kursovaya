@@ -5,11 +5,13 @@ from core.service import TaskService
 from ui.views import SidebarView, TaskListView, TaskDetailsView
 from ui.dialogs import NewTaskDialog, MessageDialog, ConfirmDialog
 from storage.json_storage import JsonStorage
-
+from utils.logging_conf import setup_logging
 
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
+        self.logger = setup_logging()
+        self.logger.info("App started")
 
         ctk.set_appearance_mode("System")
         ctk.set_default_color_theme("blue")
