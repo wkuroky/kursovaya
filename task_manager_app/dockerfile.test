@@ -1,0 +1,15 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# копируем проект
+COPY . /app
+
+# ставим зависимости
+RUN pip install --no-cache-dir -U pip \
+ && pip install --no-cache-dir customtkinter pytest
+
+# чтобы pytest видел src как корень (на всякий случай)
+ENV PYTHONPATH=/app/src
+
+CMD ["pytest", "-q"]

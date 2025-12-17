@@ -1,0 +1,52 @@
+2025-12-17 23:08:12,638 | INFO | TaskService initialized
+2025-12-17 23:08:12,638 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,638 | INFO | Task created: id=a66b1546-3c75-4fde-99fc-61057cf2b69e title='Read book' due='2025-12-31'
+2025-12-17 23:08:12,639 | INFO | TaskService initialized
+2025-12-17 23:08:12,639 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,639 | INFO | Task created: id=b09d38d8-4bea-4495-a959-fe299e617993 title='Old' due='2025-01-01'
+2025-12-17 23:08:12,639 | INFO | Task updated: id=b09d38d8-4bea-4495-a959-fe299e617993 title='New' status=active due='2025-02-02'
+2025-12-17 23:08:12,640 | INFO | TaskService initialized
+2025-12-17 23:08:12,640 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,641 | INFO | Task created: id=200d3547-4552-4b2e-8888-2cf6e30415bf title='To delete' due=''
+2025-12-17 23:08:12,641 | INFO | Task deleted: id=200d3547-4552-4b2e-8888-2cf6e30415bf title='To delete'
+2025-12-17 23:08:12,642 | INFO | TaskService initialized
+2025-12-17 23:08:12,642 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,642 | INFO | Task created: id=051e7f5a-b138-4413-b81c-77e5420e01e3 title='Do it' due=''
+2025-12-17 23:08:12,642 | INFO | Task marked done: id=051e7f5a-b138-4413-b81c-77e5420e01e3 title='Do it'
+2025-12-17 23:08:12,643 | INFO | TaskService initialized
+2025-12-17 23:08:12,643 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,643 | INFO | Task created: id=db1bf504-de87-4645-ada7-9f7bcd218cb2 title='A' due=''
+2025-12-17 23:08:12,643 | INFO | Task created: id=5dd94824-09ad-40b4-a048-962f7d691119 title='B' due=''
+2025-12-17 23:08:12,643 | INFO | Task marked done: id=5dd94824-09ad-40b4-a048-962f7d691119 title='B'
+2025-12-17 23:08:12,643 | INFO | TaskService initialized
+2025-12-17 23:08:12,644 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,644 | WARNING | Task update failed (not found): id=no-such-id
+2025-12-17 23:08:12,644 | INFO | TaskService initialized
+2025-12-17 23:08:12,645 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:08:12,645 | WARNING | Task delete failed (not found): id=no-such-id
+2025-12-17 23:10:45,168 | INFO | TaskService initialized
+2025-12-17 23:10:45,168 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,168 | INFO | Task created: id=7f26e43d-a286-406b-a3ab-10dd83d6db9e title='Read book' due='2025-12-31'
+2025-12-17 23:10:45,169 | INFO | TaskService initialized
+2025-12-17 23:10:45,169 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,169 | INFO | Task created: id=cb756baa-47e7-4215-80d4-74b91d65c93f title='Old' due='2025-01-01'
+2025-12-17 23:10:45,169 | INFO | Task updated: id=cb756baa-47e7-4215-80d4-74b91d65c93f title='New' status=active due='2025-02-02'
+2025-12-17 23:10:45,170 | INFO | TaskService initialized
+2025-12-17 23:10:45,170 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,170 | INFO | Task created: id=44ec3dc3-d952-4c23-90ea-cf1724b4e5dd title='To delete' due=''
+2025-12-17 23:10:45,170 | INFO | Task deleted: id=44ec3dc3-d952-4c23-90ea-cf1724b4e5dd title='To delete'
+2025-12-17 23:10:45,171 | INFO | TaskService initialized
+2025-12-17 23:10:45,171 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,171 | INFO | Task created: id=a4e2d95b-e7f8-4303-861f-c1ee72c3adb5 title='Do it' due=''
+2025-12-17 23:10:45,171 | INFO | Task marked done: id=a4e2d95b-e7f8-4303-861f-c1ee72c3adb5 title='Do it'
+2025-12-17 23:10:45,172 | INFO | TaskService initialized
+2025-12-17 23:10:45,172 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,172 | INFO | Task created: id=2376581f-49a1-4c8e-8067-a17bf042b7a4 title='A' due=''
+2025-12-17 23:10:45,172 | INFO | Task created: id=24762786-5e6a-4b5f-b126-8c2efa35709c title='B' due=''
+2025-12-17 23:10:45,172 | INFO | Task marked done: id=24762786-5e6a-4b5f-b126-8c2efa35709c title='B'
+2025-12-17 23:10:45,173 | INFO | TaskService initialized
+2025-12-17 23:10:45,173 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,173 | WARNING | Task update failed (not found): id=no-such-id
+2025-12-17 23:10:45,174 | INFO | TaskService initialized
+2025-12-17 23:10:45,174 | INFO | Service load: 0 tasks in memory
+2025-12-17 23:10:45,174 | WARNING | Task delete failed (not found): id=no-such-id
